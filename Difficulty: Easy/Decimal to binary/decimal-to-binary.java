@@ -1,16 +1,14 @@
-public class Solution {
-    public static void toBinary(int n) {
+class Solution {
+    static String decToBinary(int n) {
         // code here
-        int ans = 0;
-        int mul = 1;
+        StringBuilder ans = new StringBuilder();
         
         while (n > 0) {
             int rem = n % 2;
-            ans += rem * mul;
-            mul *= 10;
+            ans.append(rem);
             n /= 2;
         }
         
-        System.out.print(ans);
+        return ans.reverse().toString();
     }
 }
