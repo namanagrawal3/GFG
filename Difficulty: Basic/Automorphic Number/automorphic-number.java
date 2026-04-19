@@ -2,16 +2,17 @@ class Solution {
     public String isAutomorphic(int n) {
         // code here
         int square = n * n;
-        int digits = countDigit(n);
-        
-        return (n == square % (int) Math.pow(10, digits)) ? "Automorphic" : "Not Automorphic";
+        int total_digits = countDigit(n);
+        int last = square % (int) Math.pow(10, total_digits);
+
+        return (n == last) ? "Automorphic": "Not Automorphic";
     }
     public static int countDigit(int n) {
-        int cnt = 0;
+        int count = 0;
         while (n > 0) {
-            cnt++;
             n /= 10;
+            count++;
         }
-        return cnt;
+        return count;
     }
 }
