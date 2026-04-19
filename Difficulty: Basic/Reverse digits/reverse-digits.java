@@ -9,7 +9,7 @@ class Solution {
             num = num * 10 + digit;
             n /= 10;
         }
-        
+
         return num;
     }
 }
